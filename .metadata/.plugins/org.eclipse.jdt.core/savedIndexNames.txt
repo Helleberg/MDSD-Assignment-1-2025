@@ -1,0 +1,21 @@
+INDEX VERSION 1.134+C:\Users\Rasm2\Desktop\Education\Kandidat\2. Semester\Model-based Software Development\assignment-1-internal-dsl-main\.metadata\.plugins\org.eclipse.jdt.core
+2579405429.index
+637715449.index
+3258292878.index
+3604496799.index
+2711229822.index
+2069861812.index
+1773060106.index
+3321654500.index
+3402543320.index
+4256249070.index
+4034832314.index
+3677562727.index
+3604749461.index
+135416085.index
+2217895174.index
+3413725848.index
+1375430434.index
+1594567112.index
+3541568792.index
+1865797976.index

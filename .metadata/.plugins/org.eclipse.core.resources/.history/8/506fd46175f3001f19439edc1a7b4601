@@ -1,0 +1,29 @@
+package main.metamodel;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class State {
+	
+	private String name;
+	private List<Transition> transitions = new ArrayList<>();
+	
+	public State(String name) {
+		this.name = name;
+	}
+	
+	public Object getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Transition> getTransitions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Transition getTransitionByEvent(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

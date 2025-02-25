@@ -1,0 +1,90 @@
+package main;
+
+import main.metamodel.Machine;
+import main.metamodel.State;
+import main.metamodel.Transition;
+
+public class StateMachine {
+
+	private Machine machine = new Machine();
+    private State currentState;
+    private Transition currentTransition;
+    private String currentEvent;
+
+    public Machine build() {
+        return machine;
+    }
+
+    public StateMachine state(String string) {
+        currentState = new State(string);
+        machine.addState(currentState);
+        return this;
+    }
+
+    public StateMachine initial() {
+        machine.setInitialState(currentState);
+        return this;
+    }
+
+    public StateMachine when(String string) {
+        currentEvent = string;
+        currentTransition = new Transition();
+        currentTransition.setEvent(string);
+        return this;
+    }
+
+    public StateMachine to(String string) {
+        currentTransition.setTarget(machine.getState(string));
+        currentState.addTransition(currentTransition);
+        return this;
+    }
+
+    public StateMachine integer(String string) {
+        machine.addInteger(string);
+        return this;
+    }
+
+    public StateMachine set(String string, int i) {
+        currentTransition.setHasSetOperation(true);
+        currentTransition.setOperationVariableName(string);
+        currentTransition.setSetValue(i);
+        return this;
+    }
+
+    public StateMachine increment(String string) {
+        currentTransition.setHasIncrementOperation(true);
+        currentTransition.setOperationVariableName(string);
+        return this;
+    }
+
+    public StateMachine decrement(String string) {
+        currentTransition.setHasDecrementOperation(true);
+        currentTransition.setOperationVariableName(string);
+        return this;
+    }
+
+    public StateMachine ifEquals(String string, int i) {
+        currentTransition.setConditional(true);
+        currentTransition.setConditionVariableName(string);
+        currentTransition.setConditionComparedValue(i);
+        currentTransition.setConditionEqual(true);
+        return this;
+    }
+
+    public StateMachine ifGreaterThan(String string, int i) {
+        currentTransition.setConditional(true);
+        currentTransition.setConditionVariableName(string);
+        currentTransition.setConditionComparedValue(i);
+        currentTransition.setConditionGreaterThan(true);
+        return this;
+    }
+
+    public StateMachine ifLessThan(String string, int i) {
+        currentTransition.setConditional(true);
+        currentTransition.setConditionVariableName(string);
+        currentTransition.setConditionComparedValue(i);
+        currentTransition.setConditionLessThan(true);
+        return this;
+    }
+
+}
